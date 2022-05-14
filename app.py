@@ -81,7 +81,8 @@ def login():
         return jsonify({'token' : token})
 
     return make_response('Could not verify -pass', 401, {'WWW-Authenticate' : 'Basic realm="Login required!"'})   
- 
+
+"""
 @app.route('/user', methods=['POST'])
 def create_user():
     data = request.get_json()
@@ -92,6 +93,7 @@ def create_user():
     db.session.commit()
     
     return make_response(jsonify("Uzivatel vytvoren."), 200)
+"""
 
 @app.route('/user', methods=['GET'])
 @token_required
